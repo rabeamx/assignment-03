@@ -88,12 +88,12 @@ if(isset($_POST['checking'])) {
 
 if(isset($_POST['sub'])) {
 
-    $title = $_POST['title'];
-    $type = $_POST['type'];
-    $color = $_POST['color'];
-    $size = $_POST['size'];
-    $weight = $_POST['weight'];
-    $transform = $_POST['transform'];
+    $title = $_POST['title'] ?? '';
+    $type = $_POST['type'] ?? '';
+    $color = $_POST['color'] ?? '';
+    $size = $_POST['size'] ?? '';
+    $weight = $_POST['weight'] ?? '';
+    $transform = $_POST['transform'] ?? '';
 
     if(empty($title) || empty($type) || empty($color) || empty($size) || empty($weight) || empty($transform)){
         $headingsmg = setAlert('All fields are required!', 'warning');
