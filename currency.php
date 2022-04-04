@@ -31,7 +31,9 @@ switch($type){
 
 }
 
-function currencyAdv(int $amount = null, int $type = null, int $convert = null) {
+// function currencyAdv(int $amount = null, int )
+
+function currencyAdv($amount = null, $type = null, $convert = null) {
 
     $rate = null;
 
