@@ -353,7 +353,8 @@ if(isset($_POST['sub'])) {
             <div class="card shadow">
                 <div class="card-body">
                     <div class="my-3">
-                        <input type="file" name="file" id="">
+                        <input type="file" name="" id="">
+                        <label for=""><img style="width: 100px;" src="https://iconarchive.com/download/i78147/igh0zt/ios7-style-metro-ui/MetroUI-Apps-Windows8-Photos.ico" alt=""></label>
                     </div>
                     <div class="my-3">
                         <input type="submit" value="Upload Photo" class="btn btn-sm btn-primary">
