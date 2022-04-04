@@ -61,149 +61,154 @@ switch($type){
         break;
     } 
 
-    if($type == 'dollar'){
+    if($type == $convert){
+        return setAlert('Not Allowed!', 'warning');
+    } else{
 
-        switch($convert){
-            case 'dollar':
-                $rateC = 0;
-                break;
-            case 'pound':
-                $rateC = 0.76;
-                break;
-            case 'cad':
-                $rateC = 1.25;
-                break;
-            case 'euro':
-                $rateC = 0.91;
-                break;
-            case 'won':
-                $rateC = 1214.37;         
-                break;
-            case 'tk':
-                $rateT = 86.37;          
-                break;
+        if($type == 'dollar'){
+
+            switch($convert){
+                case 'dollar':
+                    $rateC = 1;
+                    break;
+                case 'pound':
+                    $rateC = 0.76;
+                    break;
+                case 'cad':
+                    $rateC = 1.25;
+                    break;
+                case 'euro':
+                    $rateC = 0.91;
+                    break;
+                case 'won':
+                    $rateC = 1214.37;         
+                    break;
+                case 'tk':
+                    $rateT = 86.37;          
+                    break;
+            }
+    
+        } elseif($type == 'pound'){
+    
+            switch($convert){
+                case 'dollar':
+                    $rateC = 1.31;
+                    break;
+                case 'pound':
+                    $rateC = 1;
+                    break;
+                case 'cad':
+                    $rateC = 1.64;
+                    break;
+                case 'euro':
+                    $rateC = 1.19;
+                    break;
+                case 'won':
+                    $rateC = 1593.47;         
+                    break;
+                case 'tk':
+                    $rateT = 113.36;          
+                    break;
+            }
+    
+        } elseif($type == 'cad'){
+    
+            switch($convert){
+                case 'dollar':
+                    $rateC = 0.80;
+                    break;
+                case 'pound':
+                    $rateC = 0.61;
+                    break;
+                case 'cad':
+                    $rateC = 1;
+                    break;
+                case 'euro':
+                    $rateC = 0.73;
+                    break;
+                case 'won':
+                    $rateC = 971.88;         
+                    break;
+                case 'tk':
+                    $rateT = 69.17;          
+                    break;
+            }
+    
+        } elseif($type == 'euro'){
+    
+            switch($convert){
+                case 'dollar':
+                    $rateC = 1.10;
+                    break;
+                case 'pound':
+                    $rateC = 0.84;
+                    break;
+                case 'cad':
+                    $rateC = 1.38;
+                    break;
+                case 'euro':
+                    $rateC = 1;
+                    break;
+                case 'won':
+                    $rateC = 1339.69;         
+                    break;
+                case 'tk':
+                    $rateT = 95.33;          
+                    break;
+            }
+    
+        } elseif($type == 'won'){
+    
+            switch($convert){
+                case 'dollar':
+                    $rateC = 0.00082;
+                    break;
+                case 'pound':
+                    $rateC = 0.00063;
+                    break;
+                case 'cad':
+                    $rateC = 0.0010;
+                    break;
+                case 'euro':
+                    $rateC = 0.00075;
+                    break;
+                case 'won':
+                    $rateC = 1;         
+                    break;
+                case 'tk':
+                    $rateT = 0.071;          
+                    break;
+            }
+    
+        } elseif($type == 'tk'){
+    
+            switch($convert){
+                case 'dollar':
+                    $rateC = 0.012;
+                    break;
+                case 'pound':
+                    $rateC = 0.0088;
+                    break;
+                case 'cad':
+                    $rateC = 0.014;
+                    break;
+                case 'euro':
+                    $rateC = 0.010;
+                    break;
+                case 'won':
+                    $rateC = 14.07;         
+                    break;
+                case 'tk':
+                    $rateC = 1;          
+                    break;
+            }
+    
         }
-
-    } elseif($type == 'pound'){
-
-        switch($convert){
-            case 'dollar':
-                $rateC = 1.31;
-                break;
-            case 'pound':
-                $rateC = 0;
-                break;
-            case 'cad':
-                $rateC = 1.64;
-                break;
-            case 'euro':
-                $rateC = 1.19;
-                break;
-            case 'won':
-                $rateC = 1593.47;         
-                break;
-            case 'tk':
-                $rateT = 113.36;          
-                break;
-        }
-
-    } elseif($type == 'cad'){
-
-        switch($convert){
-            case 'dollar':
-                $rateC = 0.80;
-                break;
-            case 'pound':
-                $rateC = 0.61;
-                break;
-            case 'cad':
-                $rateC = 0;
-                break;
-            case 'euro':
-                $rateC = 0.73;
-                break;
-            case 'won':
-                $rateC = 971.88;         
-                break;
-            case 'tk':
-                $rateT = 69.17;          
-                break;
-        }
-
-    } elseif($type == 'euro'){
-
-        switch($convert){
-            case 'dollar':
-                $rateC = 1.10;
-                break;
-            case 'pound':
-                $rateC = 0.84;
-                break;
-            case 'cad':
-                $rateC = 1.38;
-                break;
-            case 'euro':
-                $rateC = 0;
-                break;
-            case 'won':
-                $rateC = 1339.69;         
-                break;
-            case 'tk':
-                $rateT = 95.33;          
-                break;
-        }
-
-    } elseif($type == 'won'){
-
-        switch($convert){
-            case 'dollar':
-                $rateC = 0.00082;
-                break;
-            case 'pound':
-                $rateC = 0.00063;
-                break;
-            case 'cad':
-                $rateC = 0.0010;
-                break;
-            case 'euro':
-                $rateC = 0.00075;
-                break;
-            case 'won':
-                $rateC = 0;         
-                break;
-            case 'tk':
-                $rateT = 0.071;          
-                break;
-        }
-
-    } elseif($type == 'tk'){
-
-        switch($convert){
-            case 'dollar':
-                $rateC = 0.012;
-                break;
-            case 'pound':
-                $rateC = 0.0088;
-                break;
-            case 'cad':
-                $rateC = 0.014;
-                break;
-            case 'euro':
-                $rateC = 0.010;
-                break;
-            case 'won':
-                $rateC = 14.07;         
-                break;
-            case 'tk':
-                $rateT = 0;          
-                break;
-        }
-
     }
 
     $convertRate = $amount * $rateC * $rateT;
 
-    return "<span style=\" font-weight:bold; color:#9D00FF; font-size:25px;\">{$amount} {$type} = {$convertRate}{$convert}</span>";
+    return "<span style=\" font-weight:bold; color:#9D00FF; font-size:25px;\">{$amount} {$type} = {$convertRate} {$convert}</span>";
     
 }
 
