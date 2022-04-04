@@ -94,11 +94,12 @@ if(isset($_POST['sub'])) {
     $size = $_POST['size'] ?? '';
     $weight = $_POST['weight'] ?? '';
     $transform = $_POST['transform'] ?? '';
+    $ff = $_POST['ff'] ?? '';
 
-    if(empty($title) || empty($type) || empty($color) || empty($size) || empty($weight) || empty($transform)){
+    if(empty($title) || empty($type) || empty($color) || empty($size) || empty($weight) || empty($transform) || empty($ff)){
         $headingsmg = setAlert('All fields are required!', 'warning');
     }else {
-        $headingsmg = setHeading($title, $type, $color, $size, $weight, $transform);
+        $headingsmg = setHeading($title, $type, $color, $size, $weight, $transform, $ff);
     }
 }
 
@@ -310,7 +311,7 @@ if(isset($_POST['sub'])) {
                             <select name="weight" id="" class="form-control">
                                 <option value="">Select</option>
                                 <option value="light">Light</option>
-                                <option value="regular">Regular</option>
+                                <option value="normal">Regular</option>
                                 <option value="medium">Medium</option>
                                 <option value="bold">Bold</option>
                                 <option value="bolder">Bolder</option>
@@ -322,6 +323,16 @@ if(isset($_POST['sub'])) {
                                 <option value="">Select</option>
                                 <option value="uppercase">Uppercase</option>
                                 <option value="lowercase">Lowercase</option>
+                            </select>
+                        </div>
+                        <div class="my-3">
+                            <label for="">Font Family</label>
+                            <select name="ff" id="" class="form-control">
+                                <option value="">Select</option>
+                                <option value="montserrat">montserrat</option>
+                                <option value="arial">arial</option>
+                                <option value="roboto">roboto</option>
+                                <option value="poppins">poppins</option>
                             </select>
                         </div>
                         <div class="my-3">
