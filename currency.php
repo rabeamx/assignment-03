@@ -40,19 +40,19 @@ function currencyAdv($amount = null, $type = null, $convert = null) {
 switch($type){
 
     case 'dollar':
-        $rate = 86.38;
+        $rateT = 86.38;
         break;
     case 'pound':
-        $rate = 113.19;
+        $rateT = 113.19;
         break;
     case 'cad':
-        $rate = 68.98;
+        $rateT = 68.98;
         break;
     case 'euro':
-        $rate = 95.41;
+        $rateT = 95.41;
         break;
     case 'won':
-        $rate = 0.071;          
+        $rateT = 0.071;          
         break;
     } 
 
@@ -62,25 +62,22 @@ switch($convert){
 
     case 'dollar':
         $rate = 86.38;
-        $convertRate = $amount * $rate;
         break;
     case 'pound':
         $rate = 113.19;
-        $convertRate = $amount * $rate;
         break;
     case 'cad':
         $rate = 68.98;
-        $convertRate = $amount * $rate;
         break;
     case 'euro':
         $rate = 95.41;
-        $convertRate = $amount * $rate;
         break;
     case 'won':
-        $rate = 0.071;  
-        $convertRate = $amount * $rate;        
+        $rate = 0.071;         
         break;
 } 
+
+    $convertRate = $amount * $rate * $rateT;
 
     return "<span style=\" font-weight:bold; color:#9D00FF; font-size:25px;\">{$amount} {$type} = {$convertRate}{$convert}</span>";
     
