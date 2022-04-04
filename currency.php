@@ -84,7 +84,7 @@ switch($type){
                     $rateC = 1214.37;         
                     break;
                 case 'tk':
-                    $rateT = 86.37;          
+                    $rateC = 86.37;          
                     break;
             }
     
@@ -107,7 +107,7 @@ switch($type){
                     $rateC = 1593.47;         
                     break;
                 case 'tk':
-                    $rateT = 113.36;          
+                    $rateC = 113.36;          
                     break;
             }
     
@@ -130,7 +130,7 @@ switch($type){
                     $rateC = 971.88;         
                     break;
                 case 'tk':
-                    $rateT = 69.17;          
+                    $rateC = 69.17;          
                     break;
             }
     
@@ -153,7 +153,7 @@ switch($type){
                     $rateC = 1339.69;         
                     break;
                 case 'tk':
-                    $rateT = 95.33;          
+                    $rateC = 95.33;          
                     break;
             }
     
@@ -176,7 +176,7 @@ switch($type){
                     $rateC = 1;         
                     break;
                 case 'tk':
-                    $rateT = 0.071;          
+                    $rateC = 0.071;          
                     break;
             }
     
