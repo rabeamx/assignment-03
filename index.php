@@ -198,6 +198,7 @@ if(isset($_POST['sub'])) {
                                 <option value="cad">Canadian Dollar</option>
                                 <option value="euro">Euro</option>
                                 <option value="won">Won</option>
+                                <option value="tk">BDT</option>
                             </select>
                         </div>
                         <div class="my-3">
@@ -209,6 +210,7 @@ if(isset($_POST['sub'])) {
                                 <option value="cad">Canadian Dollar</option>
                                 <option value="euro">Euro</option>
                                 <option value="won">Won</option>
+                                <option value="tk">BDT</option>
                             </select>
                         </div>
                         <div class="my-3">
