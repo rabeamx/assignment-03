@@ -26,6 +26,11 @@ include_once "./function.php";
         .file-content input[type="file"] {
             display: none;
         }
+
+        .preview img {
+            width: 100%;
+            border: 10px solid #fff;
+        }
     </style>
 </head>
 <body>
@@ -118,8 +123,7 @@ if(isset($_POST['sub'])) {
 if(isset($_POST['upload'])) {
 
     $file = $_FILES['photo'];
-
-    $file_name = $file['name'];
+    $file_name = time() .'_'. rand() .'_'. $file['name'];
     $file_tmp_name = $file['tmp_name'];
 
     move_uploaded_file($file_tmp_name, 'assets/image/' . $file_name);
@@ -376,8 +380,11 @@ if(isset($_POST['upload'])) {
                 <div class="card-body">
                     <form action="" method="POST" enctype="multipart/form-data">
                         <div class="my-3 file-content">
-                            <input name="photo" type="file" name="" id="file-upload">
-                            <label for="file-upload"><img src="https://iconarchive.com/download/i78147/igh0zt/ios7-style-metro-ui/MetroUI-Apps-Windows8-Photos.ico" alt=""></label>
+                            <input name="photo" type="file" name="" id="fileupload">
+                            <label for="fileupload"><img src="https://iconarchive.com/download/i78147/igh0zt/ios7-style-metro-ui/MetroUI-Apps-Windows8-Photos.ico" alt=""></label>
+                        </div>
+                        <div class="preview">
+                            <img class="shadow" id="preview_photo" src="" alt="">
                         </div>
                         <div class="my-3">
                             <input name="upload" type="submit" value="Upload Photo" class="btn btn-sm btn-primary">
@@ -390,7 +397,21 @@ if(isset($_POST['upload'])) {
 </div>
 
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script>
+
+    $('#fileupload').change( function(e){
+
+        let file = URL.createObjectURL(e.target.files[0]);
+
+        console.log(e.target.files[0]);
+
+        $('#preview_photo').attr('src', file);
+
+    });
+
+</script>
 
 
 </body>
