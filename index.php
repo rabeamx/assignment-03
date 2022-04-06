@@ -17,6 +17,16 @@ include_once "./function.php";
     <title>Assignment-03</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .file-content img {
+            width: 100px;
+            cursor: pointer;
+        }
+
+        .file-content input[type="file"] {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
@@ -101,6 +111,18 @@ if(isset($_POST['sub'])) {
     }else {
         $headingsmg = setHeading($title, $type, $color, $size, $weight, $transform, $ff);
     }
+}
+
+// Upload Photo => 06
+
+if(isset($_POST['upload'])) {
+
+    $file = $_FILES['photo'];
+
+    $file_name = $file['name'];
+    $file_tmp_name = $file['tmp_name'];
+
+    move_uploaded_file($file_tmp_name, 'assets/image/' . $file_name);
 }
 
 ?>
@@ -352,13 +374,15 @@ if(isset($_POST['sub'])) {
         <div class="col-md-5">
             <div class="card shadow">
                 <div class="card-body">
-                    <div class="my-3">
-                        <input type="file" name="" id="">
-                        <label for=""><img style="width: 100px;" src="https://iconarchive.com/download/i78147/igh0zt/ios7-style-metro-ui/MetroUI-Apps-Windows8-Photos.ico" alt=""></label>
-                    </div>
-                    <div class="my-3">
-                        <input type="submit" value="Upload Photo" class="btn btn-sm btn-primary">
-                    </div>
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        <div class="my-3 file-content">
+                            <input name="photo" type="file" name="" id="file-upload">
+                            <label for="file-upload"><img src="https://iconarchive.com/download/i78147/igh0zt/ios7-style-metro-ui/MetroUI-Apps-Windows8-Photos.ico" alt=""></label>
+                        </div>
+                        <div class="my-3">
+                            <input name="upload" type="submit" value="Upload Photo" class="btn btn-sm btn-primary">
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
