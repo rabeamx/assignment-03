@@ -405,8 +405,6 @@ if(isset($_POST['upload'])) {
 
         let file = URL.createObjectURL(e.target.files[0]);
 
-        console.log(e.target.files[0]);
-
         $('#preview_photo').attr('src', file);
 
     });
