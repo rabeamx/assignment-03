@@ -30,6 +30,7 @@ include_once "./function.php";
         .preview img {
             width: 100%;
             border: 10px solid #fff;
+            display: none;
         }
     </style>
 </head>
@@ -123,10 +124,17 @@ if(isset($_POST['sub'])) {
 if(isset($_POST['upload'])) {
 
     $file = $_FILES['photo'];
+
     $file_name = time() .'_'. rand() .'_'. $file['name'];
     $file_tmp_name = $file['tmp_name'];
+    $file_type = $file['type'];
 
-    move_uploaded_file($file_tmp_name, 'assets/image/' . $file_name);
+    if($file_type == 'image/jpeg' || $file_type == 'image/jpg' || $file_type == 'image/png' || $file_type == 'image/gif') {
+        move_uploaded_file($file_tmp_name, 'assets/image/' . $file_name);
+    }else {
+        $msgs = setAlert('Invalid image file format!', 'warning');
+    }
+
 }
 
 ?>
@@ -378,6 +386,9 @@ if(isset($_POST['upload'])) {
         <div class="col-md-5">
             <div class="card shadow">
                 <div class="card-body">
+                    <h3>Image Upload</h3>
+                    <?php echo $msgs ?? ''; ?>
+                    <hr>
                     <form action="" method="POST" enctype="multipart/form-data">
                         <div class="my-3 file-content">
                             <input name="photo" type="file" name="" id="fileupload">
@@ -402,6 +413,8 @@ if(isset($_POST['upload'])) {
 <script>
 
     $('#fileupload').change( function(e){
+
+        $('#preview_photo').show();
 
         let file = URL.createObjectURL(e.target.files[0]);
 
